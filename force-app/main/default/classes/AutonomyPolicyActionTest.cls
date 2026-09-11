@@ -1,0 +1,5 @@
+@IsTest private class AutonomyPolicyActionTest {
+ @IsTest static void absentPolicyHolds() {AutonomyPolicyAction.Request r=new AutonomyPolicyAction.Request();r.policyName='Absent';r.version='v1';r.labeledCases=100;r.unsafeCases=0;AutonomyPolicyAction.Result v=AutonomyPolicyAction.evaluate(new List<AutonomyPolicyAction.Request>{r})[0];System.assertEquals('HOLD',v.mode);System.assertEquals(false,v.automaticPromotion);}
+ @IsTest static void disabledTemplateHolds() {AutonomyPolicyAction.Request r=new AutonomyPolicyAction.Request();r.policyName='Case_Review';r.version='v1';r.labeledCases=100;r.unsafeCases=0;System.assertEquals('HOLD',AutonomyPolicyAction.evaluate(new List<AutonomyPolicyAction.Request>{r})[0].mode);}
+ @IsTest static void malformedCountsHold() {AutonomyPolicyAction.Request r=new AutonomyPolicyAction.Request();r.policyName='Case_Review';r.version='v1';r.labeledCases=-1;r.unsafeCases=-2;System.assertEquals('HOLD',AutonomyPolicyAction.evaluate(new List<AutonomyPolicyAction.Request>{r})[0].mode);}
+}

@@ -1,0 +1,59 @@
+{
+  "id": "UC16",
+  "name": "Autonomy Rollout",
+  "platform": "Salesforce",
+  "scope": "Custom metadata version-bound Case policy gate returns review/hold; never automatically promotes autonomy.",
+  "status": "scoped_native_validated",
+  "publication": "scoped_source_preview_eligible",
+  "requirements": [
+    {
+      "id": "UC16-R01",
+      "acceptance": "Mode meaning is explicit and not inferred from model confidence.",
+      "coverage": "Native action returns HOLD or OWNER_REVIEW; automaticPromotion always false.",
+      "blocker": "Domain-approved consequences and full autonomy transition taxonomy absent."
+    },
+    {
+      "id": "UC16-R02",
+      "acceptance": "Missing or biased coverage remains visible.",
+      "coverage": "Invocable accepts policy/version and labeled/unsafe counts; invalid evidence holds.",
+      "blocker": "Outcome ingestion, independent subgroup labels and cohort audit absent."
+    },
+    {
+      "id": "UC16-R03",
+      "acceptance": "Insufficient evidence cannot produce an automatic promotion recommendation.",
+      "coverage": "Custom metadata positive minimum cohort and zero unsafe count are required for review.",
+      "blocker": "This is not a statistical risk bound; qualified review and subgroup uncertainty methods absent."
+    },
+    {
+      "id": "UC16-R04",
+      "acceptance": "Stale evidence cannot authorize an unchanged confidence claim.",
+      "coverage": "Configuration_Version__c must match nonblank request version; disabled template always holds.",
+      "blocker": "External dependency/configuration drift discovery absent."
+    },
+    {
+      "id": "UC16-R05",
+      "acceptance": "Simulator success is not represented as proven operational risk reduction.",
+      "coverage": "Result includes explicit reason and no automatic promotion; disabled CMDT ships as template.",
+      "blocker": "Owner-approved rollout/rollback manifest and operational validation pending."
+    }
+  ],
+  "blockers": [
+    "Scoped metadata compilation and unit tests passed; broader integration, denied-user scenarios, actual domain policies and independent evaluation remain incomplete.",
+    "Original acceptance requirements remain partial; owner validation, comparative benchmarks and independent evidence pending."
+  ],
+  "native_tests": [
+    "AutonomyPolicyActionTest"
+  ],
+  "commands": [
+    "npm test",
+    "sf project deploy start --dry-run --target-org eb1a-dev --manifest manifest/package.xml --test-level RunSpecifiedTests --tests AutonomyPolicyActionTest"
+  ],
+  "full_acceptance_complete": false,
+  "native_validation": {
+    "status": "passed",
+    "mode": "dry-run",
+    "tests_completed": 3,
+    "persisted_deployment": false,
+    "scope": "one Developer org; scoped unit tests and supplied metadata only"
+  }
+}
