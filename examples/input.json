@@ -1,0 +1,27 @@
+{
+  "data": {
+    "cohorts": [
+      {
+        "errors": 0,
+        "group": "routine",
+        "n": 100,
+        "version": "v1"
+      },
+      {
+        "errors": 0,
+        "group": "consequential",
+        "n": 100,
+        "version": "v1"
+      }
+    ],
+    "current_version": "v1",
+    "max_error_upper": 0.15,
+    "minimum_n": 30,
+    "required_groups": [
+      "routine",
+      "consequential"
+    ]
+  },
+  "evidence_class": "simulated",
+  "spec_version": 1
+}

@@ -1,0 +1,25 @@
+{
+  "analysis_completed": true,
+  "automatic_promotion": false,
+  "blocking_groups": [],
+  "evidence_class": "simulated",
+  "missing_groups": [],
+  "statistical_limit": "Approximate two-sided 95% Wilson upper endpoint; no simultaneous subgroup guarantee, independence unverified.",
+  "status": "eligible_for_owner_review",
+  "subgroups": [
+    {
+      "errors": 0,
+      "group": "routine",
+      "n": 100,
+      "reasons": [],
+      "wilson_95_upper": 0.03699349820698568
+    },
+    {
+      "errors": 0,
+      "group": "consequential",
+      "n": 100,
+      "reasons": [],
+      "wilson_95_upper": 0.03699349820698568
+    }
+  ]
+}

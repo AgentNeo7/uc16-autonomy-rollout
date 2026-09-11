@@ -1,0 +1,18 @@
+[
+  {
+    "title": "NIST confidence intervals for proportions",
+    "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+    "accessed": "2026-09-11",
+    "evidence_class": "externally_reported",
+    "note": "NIST gives the Wilson interval formula and describes exact alternatives. The prototype uses an approximate two-sided 95% upper endpoint, without simultaneous subgroup guarantees.",
+    "performance_verified": false
+  },
+  {
+    "title": "LangSmith evaluation",
+    "url": "https://docs.langchain.com/langsmith/evaluation",
+    "accessed": "2026-09-11",
+    "evidence_class": "externally_reported",
+    "note": "LangSmith documents offline datasets and online evaluation. An authored local fixture check is narrower than representative comparative evaluation.",
+    "performance_verified": false
+  }
+]
